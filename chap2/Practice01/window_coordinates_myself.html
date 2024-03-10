@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      .standard {
+        background-color: bisque;
+        width: 300px;
+        height: 300px;
+        margin-bottom: 5px;
+      }
+      .special {
+        background-color: lightcoral;
+        width: 300px;
+        height: 300px;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="standard"></div>
+    <div class="standard"></div>
+    <div class="standard"></div>
+    <div class="standard"></div>
+    <div class="standard"></div>
+    <div class="standard"></div>
+    <div class="special"></div>
+    <div class="standard"></div>
+    <div class="standard"></div>
+    <div class="standard"></div>
+    <div class="standard"></div>
+  </body>
+  <script>
+    const specialBtn = document.querySelector(".special");
+
+    specialBtn.addEventListener("click", (e) => {
+      console.log(`client: ${e.x}, ${e.y}`);
+      console.log(`page: ${e.screenX}, ${e.screenY}`);
+    });
+  </script>
+</html>
