@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="background-color: pink">
+      window.screen:
+      <div id="screenWidth"></div>
+      <div id="screenHeight"></div>
+      window.outer:
+      <div id="outerWidth"></div>
+      <div id="outerHeight"></div>
+      window.inner:
+      <div id="innerWidth"></div>
+      <div id="innerHeight"></div>
+      documentElement.clientWidth:
+      <div id="clientWidth"></div>
+      <div id="clientHeight"></div>
+    </div>
+  </body>
+</html>
+
+<script>
+  // window.screen
+  document.getElementById("screenWidth").innerHTML = window.screen.availWidth;
+  document.getElementById("screenHeight").innerHTML = window.screen.availHeight;
+
+  // window.outer
+  document.getElementById("outerWidth").innerHTML = window.outerWidth;
+  document.getElementById("outerHeight").innerHTML = window.outerHeight;
+
+  // window.inner
+  document.getElementById("innerWidth").innerHTML = window.innerWidth;
+  document.getElementById("innerHeight").innerHTML = window.innerHeight;
+
+  // clientWidth
+  document.getElementById("clientWidth").innerHTML = "";
+  document.getElementById("clientHeight").innerHTML = "";
+</script>
