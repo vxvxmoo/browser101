@@ -1,0 +1,26 @@
+html,
+body {
+  background-color: black;
+  cursor: url(img/target.png), auto;
+}
+
+.line {
+  height: 100%;
+  width: 100%;
+}
+
+.cursor-coordinate {
+  color: white;
+}
+
+.v-line {
+  position: absolute;
+  border-left: thin solid white;
+  height: 100%;
+}
+
+.h-line {
+  position: absolute;
+  border-top: thin solid white;
+  width: 100%;
+}
