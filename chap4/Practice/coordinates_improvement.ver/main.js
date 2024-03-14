@@ -6,6 +6,8 @@ const targetRect = target.getBoundingClientRect();
 const targetHalfWidth = targetRect.width / 2;
 const targetHalfHeight = targetRect.height / 2;
 
+console.log(targetRect);
+
 document.addEventListener("mousemove", (e) => {
   const x = e.clientX;
   const y = e.clientY;
