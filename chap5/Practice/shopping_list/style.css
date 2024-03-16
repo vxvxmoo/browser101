@@ -1,0 +1,40 @@
+body {
+  background-color: lightgrey;
+}
+
+.shopping-list {
+  background-color: white;
+  width: 30%;
+  height: 500px;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
+.header {
+  background-image: linear-gradient(to bottom right, #f8cacc, #8da4d0);
+  height: 10%;
+  margin: 10px auto;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+}
+
+.main {
+}
+
+.footer {
+  background-image: linear-gradient(to bottom right, #f8cacc, #8da4d0);
+  height: 10%;
+  margin: 400px auto;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+}
