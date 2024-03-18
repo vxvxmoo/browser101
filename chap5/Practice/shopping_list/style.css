@@ -1,9 +1,9 @@
 body {
-  background-color: lightgrey;
+  background-color: #e4e4f2;
 }
 
 .shopping-list {
-  background-color: white;
+  background-color: #f8f8f8;
   width: 30%;
   height: 500px;
   margin: 0 auto;
@@ -23,13 +23,18 @@ body {
   font-size: 20px;
 }
 
-.main {
+.input-area {
+  background-color: white;
+  width: 97%;
+  height: 25px;
+  border: none;
+  margin: 400px auto;
 }
 
 .footer {
   background-image: linear-gradient(to bottom right, #f8cacc, #8da4d0);
   height: 10%;
-  margin: 400px auto;
+  margin: -400px auto;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   display: flex;
