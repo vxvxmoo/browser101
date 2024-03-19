@@ -1,7 +1,12 @@
 const items = document.querySelector(".items");
+const form = document.querySelector(".new-form");
 const input = document.querySelector(".footer__input");
 const addBtn = document.querySelector(".footer__button");
-const deleteBtn = document.querySelector(".item__delete");
+
+form.addEventListener("submit", (e) => {
+  event.preventDefault();
+  onAdd();
+});
 
 function onAdd() {
   const text = input.value;
@@ -35,17 +40,6 @@ function createItem(text) {
   id++;
   return itemRow;
 }
-
-addBtn.addEventListener("click", () => {
-  onAdd();
-});
-
-input.addEventListener("keydown", (e) => {
-  if (e.isComposing) return;
-  if (e.key === "Enter") {
-    onAdd();
-  }
-});
 
 // 이벤트 위임
 items.addEventListener("click", (event) => {
