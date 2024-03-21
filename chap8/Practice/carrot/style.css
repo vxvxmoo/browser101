@@ -25,7 +25,8 @@ body {
   margin: 5px auto 0;
 }
 
-.btn-start {
+.btn-start,
+.btn-stop {
   transform: translate(0, 10%);
 }
 
