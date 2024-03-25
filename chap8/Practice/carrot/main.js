@@ -12,7 +12,7 @@ btnPlay.addEventListener("click", (e) => {
     timer = setInterval(counterTimer, 1000);
   } else {
     btnPlay.innerHTML = '<i class="fa-solid fa-play btn-start"></i>';
-    boardTimer.innerText = `00:0${sec}`;
+    boardTimer.innerText = `00:${sec}`;
     clearInterval(timer);
   }
 });

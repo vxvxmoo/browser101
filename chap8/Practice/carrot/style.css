@@ -4,7 +4,7 @@ body {
 
 .display__background {
   background-image: url("img/background.png");
-  /* background-color: aliceblue; */
+  background-color: aliceblue;
   background-size: cover;
   width: 650px;
   height: 400px;
@@ -14,7 +14,7 @@ body {
 }
 
 .button__play {
-  background-color: burlywood;
+  background-color: beige;
   border: 2px solid black;
   border-radius: 10px;
   width: 40px;
@@ -26,7 +26,8 @@ body {
 }
 
 .btn-start,
-.btn-stop {
+.btn-stop,
+.btn-retry {
   transform: translate(0, 10%);
 }
 
@@ -47,5 +48,40 @@ body {
   border-radius: 50%;
   width: 40px;
   height: 40px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
   margin: 5px auto 0;
+}
+
+.cabinet__win_lost_board {
+  display: none;
+  position: fixed;
+  top: 250px;
+  left: 190px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 300px;
+  height: 100px;
+  margin: auto;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.button__retry {
+  background-color: burlywood;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  margin: 0 auto;
+  cursor: pointer;
+  color: black;
+}
+
+.message__board {
+  font-size: 30px;
+  color: white;
+  margin: 10px;
 }
