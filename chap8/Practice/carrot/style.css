@@ -56,13 +56,10 @@ body {
 
 .cabinet__win_lost_board {
   display: none;
-  position: fixed;
-  top: 250px;
-  left: 190px;
   background-color: rgba(0, 0, 0, 0.5);
   width: 300px;
   height: 100px;
-  margin: auto;
+  margin: 100px auto;
   padding: 10px;
   border-radius: 15px;
   text-align: center;
