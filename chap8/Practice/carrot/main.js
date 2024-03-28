@@ -5,6 +5,7 @@ const cabinetBugCarrot = document.querySelector(".cabinet__bug_carrot");
 const cabinetBoard = document.querySelector(".cabinet__win_lost_board");
 const btnRetry = document.querySelector(".button__retry");
 const displayBackground = document.querySelector(".display__background");
+const cabinetButton = document.querySelector(".cabinet__button");
 
 let bugImage;
 let carrotImage;
@@ -38,28 +39,29 @@ function gameStart() {
   const carrots = Math.floor(Math.random() * 10) + 15;
 
   // 배치할 위치 지정
-  let top = boardScore.getBoundingClientRect().top;
-  let left = displayBackground.getBoundingClientRect().left;
-  let bottom = displayBackground.getBoundingClientRect().bottom;
-  let right = displayBackground.getBoundingClientRect().right;
+  let top = displayBackground.offsetTop + cabinetButton.offsetHeight;
+  let left = displayBackground.offsetLeft;
+  let width = displayBackground.offsetWidth;
+  let height = displayBackground.offsetHeight;
 
-  // 위의 수를 토대로 bug, carrot 배치
-  for (let i = 0; i < bugs; i++) {
-    bugImage = document.createElement("img");
-    bugImage.setAttribute("src", "img/bug.png");
-    bugImage.style.top = Math.floor(Math.random() * 10) + top;
-    bugImage.style.left = Math.floor(Math.random() * 10) + left;
-    bugImage.style.bottom = Math.floor(Math.random() * 10) + bottom;
-    bugImage.style.right = Math.floor(Math.random() * 10) + right;
-    cabinetBugCarrot.appendChild(bugImage);
-  }
   for (let i = 0; i < carrots; i++) {
+    let offX = parseInt(Math.random() * width);
+    let offY = parseInt(Math.random() * height);
+
+    console.log(
+      `top: ${top}, left: ${left}, width: ${width}, height: ${height}`
+    );
+    left += offX;
+    top += offY;
+
     carrotImage = document.createElement("img");
+
     carrotImage.setAttribute("src", "img/carrot.png");
-    carrotImage.style.top = Math.floor(Math.random() * 10) + top;
-    carrotImage.style.left = Math.floor(Math.random() * 10) + left;
-    carrotImage.style.bottom = Math.floor(Math.random() * 10) + bottom;
-    carrotImage.style.right = Math.floor(Math.random() * 10) + right;
+
+    carrotImage.style.position = "absolute";
+    carrotImage.style.left = left + "px";
+    carrotImage.style.top = top + "px";
+
     cabinetBugCarrot.appendChild(carrotImage);
   }
 }
