@@ -16,7 +16,7 @@ let sec = 10;
 
 btnPlay.addEventListener("click", (e) => {
   if (e.target.classList.contains("btn-start")) {
-    // audioBgm.play();
+    audioBgm.play();
     gameStart();
     btnPlay.innerHTML = '<i class="fa-solid fa-stop btn-stop"></i>';
     boardTimer.innerText = `00:${sec}`;
@@ -34,7 +34,7 @@ btnPlay.addEventListener("click", (e) => {
 });
 
 function gameStart() {
-  let margin = 80;
+  let margin = 80; // bug, carrot 사이즈
 
   let top = cabinetButton.getBoundingClientRect().bottom;
   let right = displayBackground.getBoundingClientRect().right;
@@ -42,7 +42,10 @@ function gameStart() {
   let bottom = displayBackground.getBoundingClientRect().bottom;
 
   let carrots = parseInt(Math.random() * 15);
+  let bugs = parseInt(Math.random() * 15);
+  boardScore.textContent = carrots + bugs; // 점수판에 스코어 추가
 
+  // 당근 무작위
   for (let i = 0; i < carrots; i++) {
     let offX = Math.random() * (right - left);
     let offY = Math.random() * (bottom - top);
@@ -52,18 +55,39 @@ function gameStart() {
 
     let carrotImage = document.createElement("img");
     carrotImage.setAttribute("src", "img/carrot.png");
+    carrotImage.setAttribute("class", "carrot");
 
-    console.log(`제대로 들어오나요? offx: ${offX}, offy: ${offY}`);
     carrotImage.style.position = "absolute";
     carrotImage.style.right = offX + "px";
     carrotImage.style.top = offY + "px";
 
     cabinetBugCarrot.appendChild(carrotImage);
   }
+
+  // 벌레 무작위
+  for (let i = 0; i < bugs; i++) {
+    let offX = Math.random() * (right - left);
+    let offY = Math.random() * (bottom - top);
+
+    if (offX > margin) offX -= margin;
+    if (offY > margin) offY -= margin;
+
+    let bugImage = document.createElement("img");
+    bugImage.setAttribute("src", "img/bug.png");
+    bugImage.setAttribute("class", "bug");
+
+    bugImage.style.position = "absolute";
+    bugImage.style.right = offX + "px";
+    bugImage.style.top = offY + "px";
+
+    cabinetBugCarrot.appendChild(bugImage);
+  }
 }
 
+document.querySelector("");
 function catchBug() {
   // 타이머 멈춤
+  clearInterval(timer);
   // YOU LOST 문구
 }
 
@@ -82,14 +106,3 @@ function counterTimer() {
   sec--;
   boardTimer.innerText = `00:${sec}`;
 }
-
-window.addEventListener("load", (e) => {
-  let boardScoreBottom = boardScore.getBoundingClientRect();
-  let displayBackground = document
-    .querySelector(".display__background")
-    .getBoundingClientRect();
-
-  // console.log(`주황 동그라미 - bottom: ${boardScoreBottom.bottom}`);
-  // console.log(`전체 div - left: ${displayBackground.left}`);
-  // console.log(`전체 div - right: ${displayBackground.right}`);
-});
