@@ -34,36 +34,27 @@ btnPlay.addEventListener("click", (e) => {
 });
 
 function gameStart() {
-  // bug, carrot 개수 -> 15~25개 사이로 정함
-  const bugs = Math.floor(Math.random() * 10) + 15;
-  const carrots = Math.floor(Math.random() * 10) + 15;
+  let margin = 80;
 
-  // 배치할 위치 지정
-  let top = displayBackground.offsetTop + cabinetButton.offsetHeight;
-  let left = displayBackground.offsetLeft;
-  let width = displayBackground.offsetWidth;
-  let height = displayBackground.offsetHeight;
+  let top = cabinetButton.getBoundingClientRect().bottom;
+  let right = displayBackground.getBoundingClientRect().right;
+  let left = displayBackground.getBoundingClientRect().left;
+  let bottom = displayBackground.getBoundingClientRect().bottom;
 
-  for (let i = 0; i < carrots; i++) {
-    let offX = parseInt(Math.random() * width);
-    let offY = parseInt(Math.random() * height);
+  let offX = Math.random() * (right - left);
+  let offY = Math.random() * (bottom - top);
 
-    console.log(
-      `top: ${top}, left: ${left}, width: ${width}, height: ${height}`
-    );
-    left += offX;
-    top += offY;
+  if (offX > margin) offX -= margin;
+  if (offY > margin) offY -= margin;
 
-    carrotImage = document.createElement("img");
+  let carrotImage = document.createElement("img");
+  carrotImage.setAttribute("src", "img/carrot.png");
 
-    carrotImage.setAttribute("src", "img/carrot.png");
+  carrotImage.style.position = "absolute";
+  carrotImage.style.right = offX + "px";
+  carrotImage.style.top = offY + "px";
 
-    carrotImage.style.position = "absolute";
-    carrotImage.style.left = left + "px";
-    carrotImage.style.top = top + "px";
-
-    cabinetBugCarrot.appendChild(carrotImage);
-  }
+  cabinetBugCarrot.appendChild(carrotImage);
 }
 
 function catchBug() {
