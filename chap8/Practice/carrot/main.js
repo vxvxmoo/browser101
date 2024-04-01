@@ -41,20 +41,25 @@ function gameStart() {
   let left = displayBackground.getBoundingClientRect().left;
   let bottom = displayBackground.getBoundingClientRect().bottom;
 
-  let offX = Math.random() * (right - left);
-  let offY = Math.random() * (bottom - top);
+  let carrots = parseInt(Math.random() * 15);
 
-  if (offX > margin) offX -= margin;
-  if (offY > margin) offY -= margin;
+  for (let i = 0; i < carrots; i++) {
+    let offX = Math.random() * (right - left);
+    let offY = Math.random() * (bottom - top);
 
-  let carrotImage = document.createElement("img");
-  carrotImage.setAttribute("src", "img/carrot.png");
+    if (offX > margin) offX -= margin;
+    if (offY > margin) offY -= margin;
 
-  carrotImage.style.position = "absolute";
-  carrotImage.style.right = offX + "px";
-  carrotImage.style.top = offY + "px";
+    let carrotImage = document.createElement("img");
+    carrotImage.setAttribute("src", "img/carrot.png");
 
-  cabinetBugCarrot.appendChild(carrotImage);
+    console.log(`제대로 들어오나요? offx: ${offX}, offy: ${offY}`);
+    carrotImage.style.position = "absolute";
+    carrotImage.style.right = offX + "px";
+    carrotImage.style.top = offY + "px";
+
+    cabinetBugCarrot.appendChild(carrotImage);
+  }
 }
 
 function catchBug() {
