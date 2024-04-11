@@ -7,9 +7,6 @@ const btnRetry = document.querySelector(".button__retry");
 const displayBackground = document.querySelector(".display__background");
 const cabinetButton = document.querySelector(".cabinet__button");
 
-let bugImage;
-let carrotImage;
-
 let audioBgm = new Audio("sound/bg.mp3");
 let timer;
 let sec = 10;
@@ -33,6 +30,7 @@ btnPlay.addEventListener("click", (e) => {
   }
 });
 
+// 게임 시작
 function gameStart() {
   let margin = 80; // bug, carrot 사이즈
 
@@ -84,7 +82,11 @@ function gameStart() {
   }
 }
 
-document.querySelector("");
+// bug 눌렀을 때
+// document.querySelector(".bug").addEventListener("click", (e) => {
+//   console.log("하위");
+// });
+
 function catchBug() {
   // 타이머 멈춤
   clearInterval(timer);
